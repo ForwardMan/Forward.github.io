@@ -166,7 +166,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -176,7 +176,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -229,6 +229,104 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/02/code/" itemprop="url">
+                  【数论】gcd && lcm
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-05-02T13:58:00+08:00" content="2016-05-02">
+              2016-05-02
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="gcd（阿基米德）求最大公约数"><a href="#gcd（阿基米德）求最大公约数" class="headerlink" title="gcd（阿基米德）求最大公约数"></a>gcd（阿基米德）求最大公约数</h1><p>用一般的方法去求最大公约数会费时很多，如果位数上升到18位数的时候，再一个个的去求，那就太浪费生命了。<br>那就用一个高效的gcd来解吧，代码很简单，如下：<br>typedef long long ll;<br>ll gcd(ll a,ll b)<br>{<br>    if(b == 0)<br>        return a;<br>    return gcd(b,a%b);<br>}</p>
+<p>这代码通俗易懂，很简短，却也很高能，把它牢记于心~</p>
+<h1 id="gcd-和-lcm-联合起来求-最小公倍数"><a href="#gcd-和-lcm-联合起来求-最小公倍数" class="headerlink" title="gcd 和 lcm 联合起来求 最小公倍数"></a>gcd 和 lcm 联合起来求 最小公倍数</h1><p>其实这个就是用a乘b的值在除以gcd就行了，代码：</p>
+<p>typedef long long ll;<br>ll gcd(ll a,ll b)<br>{<br>    if(b == 0)<br>        return a;<br>    return gcd(b,a%b);<br>}<br>ll lcm(ll a,ll b)<br>{<br>return a*b/gcd(a,b);<br>}</p>
+<h1 id="题源"><a href="#题源" class="headerlink" title="题源"></a>题源</h1><p> CodeForces 483A</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/30/day/" itemprop="url">
                   when ten years goes.
                 </a>
@@ -242,7 +340,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-04-30T04:10:38+08:00" content="2016-04-30">
               2016-04-30
             </time>
@@ -273,7 +371,7 @@
       
         
           
-            <h1 id="朋友，像一杯酒，像一首老歌-。"><a href="#朋友，像一杯酒，像一首老歌-。" class="headerlink" title="朋友，像一杯酒，像一首老歌  。"></a>朋友，像一杯酒，像一首老歌  。</h1><p>恍恍惚惚，高中毕业快一年了。不知道当初一起同窗共苦的你们现在过得怎么样？</p>
+            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="朋友，像一杯酒，像一首老歌-。"><a href="#朋友，像一杯酒，像一首老歌-。" class="headerlink" title="朋友，像一杯酒，像一首老歌  。"></a>朋友，像一杯酒，像一首老歌  。</h1><p>恍恍惚惚，高中毕业快一年了。不知道当初一起同窗共苦的你们现在过得怎么样？</p>
 <p>深夜，总是容易让人迷醉，特别是在这样一个满是霓虹的大都市里。</p>
 <p>##那些迷茫而深沉的日子<br>  不知道是不是我帮你们提高了你们的酒量，呵呵~  那时盛夏的夜晚，在6楼的楼梯里，我们就光着身子，用那几罐啤酒，聊尽了一生的往事。<br>  是的，相信那时我们都很迷茫，未来，怎么来？<br>  第二天起床，也许我们都感到有种罪恶感。但是现在回想起来，我感到了一种深沉。人生知知己己，哪才能找来你们两个，同我一起，在青春中染色！</p>
 <p>##蒹葭苍苍  白露为霜<br>    那时我们都是纯情的少年，有心上人，却都渐行渐远（当然高中毕业后超宇终成眷属），而我现在回想的不是那时的那位女孩，而是你们陪我吐露心伤的日子。当然我一直都是洒洒脱脱的样子~</p>
@@ -341,7 +439,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-04-30T02:25:38+08:00" content="2016-04-30">
               2016-04-30
             </time>
@@ -372,7 +470,7 @@
       
         
           
-            <h1 id="这是我人生中的第一个个人blog"><a href="#这是我人生中的第一个个人blog" class="headerlink" title="这是我人生中的第一个个人blog"></a>这是我人生中的第一个个人blog</h1><p>  一连好几个小时的挣扎，终于搭建好了我的第一个blog。首先得多谢三星的教程和指导<br> 也许这个blog来得有点太迟，而今的我，已经年过20.<br> 这是一个新的起点，开始了我的share<br> 很喜欢泰戈尔的一句诗 :</p>
+            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="这是我人生中的第一个个人blog"><a href="#这是我人生中的第一个个人blog" class="headerlink" title="这是我人生中的第一个个人blog"></a>这是我人生中的第一个个人blog</h1><p>  一连好几个小时的挣扎，终于搭建好了我的第一个blog。首先得多谢三星的教程和指导<br> 也许这个blog来得有点太迟，而今的我，已经年过20.<br> 这是一个新的起点，开始了我的share<br> 很喜欢泰戈尔的一句诗 :</p>
 <blockquote>
 <p>Let life be beautiful like summer flowers and death like autumn leaves .</p>
 </blockquote>
@@ -439,7 +537,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-04-29T23:20:40+08:00" content="2016-04-29">
               2016-04-29
             </time>
@@ -470,7 +568,7 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -548,8 +646,8 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -558,8 +656,8 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -603,7 +701,7 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
