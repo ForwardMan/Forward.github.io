@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="gcd（阿基米德）求最大公约数用一般的方法去求最大公约数会费时很多，如果位数上升到18位数的时候，再一个个的去求，那就太浪费生命了。那就用一个高效的gcd来解吧，代码很简单，如下：typedef long long ll;ll gcd(ll a,ll b){    if(b == 0)        return a;    return gcd(b,a%b);}
+<meta name="description" content="gcd（欧几里德）求最大公约数用一般的方法去求最大公约数会费时很多，如果位数上升到18位数的时候，再一个个的去求，那就太浪费生命了。那就用一个高效的gcd来解吧，代码很简单，如下：typedef long long ll;ll gcd(ll a,ll b){    if(b == 0)        return a;    return gcd(b,a%b);}
 这代码通俗易懂，很简短，却也很">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【数论】gcd && lcm">
 <meta property="og:url" content="http://yoursite.com/2016/05/02/code/index.html">
 <meta property="og:site_name" content="Forward">
-<meta property="og:description" content="gcd（阿基米德）求最大公约数用一般的方法去求最大公约数会费时很多，如果位数上升到18位数的时候，再一个个的去求，那就太浪费生命了。那就用一个高效的gcd来解吧，代码很简单，如下：typedef long long ll;ll gcd(ll a,ll b){    if(b == 0)        return a;    return gcd(b,a%b);}
+<meta property="og:description" content="gcd（欧几里德）求最大公约数用一般的方法去求最大公约数会费时很多，如果位数上升到18位数的时候，再一个个的去求，那就太浪费生命了。那就用一个高效的gcd来解吧，代码很简单，如下：typedef long long ll;ll gcd(ll a,ll b){    if(b == 0)        return a;    return gcd(b,a%b);}
 这代码通俗易懂，很简短，却也很">
-<meta property="og:updated_time" content="2016-05-02T06:10:24.867Z">
+<meta property="og:updated_time" content="2016-05-29T06:50:48.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【数论】gcd && lcm">
-<meta name="twitter:description" content="gcd（阿基米德）求最大公约数用一般的方法去求最大公约数会费时很多，如果位数上升到18位数的时候，再一个个的去求，那就太浪费生命了。那就用一个高效的gcd来解吧，代码很简单，如下：typedef long long ll;ll gcd(ll a,ll b){    if(b == 0)        return a;    return gcd(b,a%b);}
+<meta name="twitter:description" content="gcd（欧几里德）求最大公约数用一般的方法去求最大公约数会费时很多，如果位数上升到18位数的时候，再一个个的去求，那就太浪费生命了。那就用一个高效的gcd来解吧，代码很简单，如下：typedef long long ll;ll gcd(ll a,ll b){    if(b == 0)        return a;    return gcd(b,a%b);}
 这代码通俗易懂，很简短，却也很">
 
 
@@ -270,7 +270,7 @@
       
 
       
-        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="gcd（阿基米德）求最大公约数"><a href="#gcd（阿基米德）求最大公约数" class="headerlink" title="gcd（阿基米德）求最大公约数"></a>gcd（阿基米德）求最大公约数</h1><p>用一般的方法去求最大公约数会费时很多，如果位数上升到18位数的时候，再一个个的去求，那就太浪费生命了。<br>那就用一个高效的gcd来解吧，代码很简单，如下：<br>typedef long long ll;<br>ll gcd(ll a,ll b)<br>{<br>    if(b == 0)<br>        return a;<br>    return gcd(b,a%b);<br>}</p>
+        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="gcd（欧几里德）求最大公约数"><a href="#gcd（欧几里德）求最大公约数" class="headerlink" title="gcd（欧几里德）求最大公约数"></a>gcd（欧几里德）求最大公约数</h1><p>用一般的方法去求最大公约数会费时很多，如果位数上升到18位数的时候，再一个个的去求，那就太浪费生命了。<br>那就用一个高效的gcd来解吧，代码很简单，如下：<br>typedef long long ll;<br>ll gcd(ll a,ll b)<br>{<br>    if(b == 0)<br>        return a;<br>    return gcd(b,a%b);<br>}</p>
 <p>这代码通俗易懂，很简短，却也很高能，把它牢记于心~</p>
 <h1 id="gcd-和-lcm-联合起来求-最小公倍数"><a href="#gcd-和-lcm-联合起来求-最小公倍数" class="headerlink" title="gcd 和 lcm 联合起来求 最小公倍数"></a>gcd 和 lcm 联合起来求 最小公倍数</h1><p>其实这个就是用a乘b的值在除以gcd就行了，代码：</p>
 <p>typedef long long ll;<br>ll gcd(ll a,ll b)<br>{<br>    if(b == 0)<br>        return a;<br>    return gcd(b,a%b);<br>}<br>ll lcm(ll a,ll b)<br>{<br>return a*b/gcd(a,b);<br>}</p>
@@ -421,7 +421,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#gcd（阿基米德）求最大公约数"><span class="nav-number">1.</span> <span class="nav-text">gcd（阿基米德）求最大公约数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gcd-和-lcm-联合起来求-最小公倍数"><span class="nav-number">2.</span> <span class="nav-text">gcd 和 lcm 联合起来求 最小公倍数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题源"><span class="nav-number">3.</span> <span class="nav-text">题源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#gcd（欧几里德）求最大公约数"><span class="nav-number">1.</span> <span class="nav-text">gcd（欧几里德）求最大公约数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gcd-和-lcm-联合起来求-最小公倍数"><span class="nav-number">2.</span> <span class="nav-text">gcd 和 lcm 联合起来求 最小公倍数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题源"><span class="nav-number">3.</span> <span class="nav-text">题源</span></a></li></ol></div>
             
           </div>
         </section>

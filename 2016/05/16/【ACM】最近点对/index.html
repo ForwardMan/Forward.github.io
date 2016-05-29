@@ -90,7 +90,7 @@
 <meta property="og:description" content="问题给出一大堆点p1(x1,y1),p2(x2,y2)….pn(xn,yn),求xoy平面中距离最近的两个点。
 方法思路分治法，先按x升序排列，用递归求除了在中点左边和中点右边的最小两点间距离d_min，然后再选择x坐标为(mid-d_min,mid+d_min)之间的距离，此时按照y升序排列，然后在求出其最小值（这里不能用递归了，直接比较）。
 代码板子struct point//用结构体保存每">
-<meta property="og:updated_time" content="2016-05-16T10:54:22.832Z">
+<meta property="og:updated_time" content="2016-05-29T06:51:06.504Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分治法求最近点对">
 <meta name="twitter:description" content="问题给出一大堆点p1(x1,y1),p2(x2,y2)….pn(xn,yn),求xoy平面中距离最近的两个点。
@@ -280,7 +280,7 @@
 <p>int cmpx(point a,point b)//对n个点按横坐标由小到大排序<br>{<br>    return a.x&lt;b.x;<br>}</p>
 <p>int cmpy(int a,int b)//（这里用的是下标索引）对筛选的点按纵坐标由小到大排序<br>{<br>    return p[a].y&lt;p[b].y;<br>}</p>
 <p>inline double dis(point a,point b)//求点对间的距离<br>{<br>    return sqrt((a.x-b.x)<em>(a.x-b.x)+(a.y-b.y)</em>(a.y-b.y));<br>}</p>
-<p>double closest(int low,int high)//求最近点对<br>{<br>    int i,j,k;<br>    if(low+1==high)//只有两个点<br>        return dis(p[low],p[high]);<br>    if(low+2==high)//只有三个点<br>        return min(dis(p[low],p[high]),min(dis(p[low],p[low+1]),dis(p[low+1],p[high])));<br>    int mid=(low+high)&gt;&gt;1;//求中点即左右子集的分界线<br>    double d=min(closest(low,mid),closest(mid+1,high));//此处递归，递归出除了在中点左边和中点右边的最小两点间距离d_min<br>    for(i=low,k=0;i&lt;=high;i++)//找出x坐标为(mid-d_min,mid+d_min)的点<br>    {<br>        if(p[i].x &gt;=p[mid].x-d&amp;&amp;p[i].x&lt;=p[mid].x+d)<br>            a[k++]=i;//保存这些点的下标索引<br>    }<br>    sort(a,a+k,cmpy);//按y坐标进行升序排序<br>    for(i=0;i<k;i++) {="" for(j="i+1;j<k;j++)" if(p[a[j]].y-p[a[i]].y="">=d)//如果两点间y的差值都比d_min大了，那么该两点的距离肯定比d_min大，所以这样的点直接break，不考虑。<br>                break;<br>            d=min(d,dis(p[a[i]],p[a[j]]));<br>        }<br>    }<br>    return d;<br>}<br>int main()<br>{<br>    int i,n;<br>    while(scanf(“%d”,&amp;n) &amp;&amp; n!= 0)//n个点<br>    {<br>        for(i = 0 ; i &lt; n ; ++i)<br>            scanf(“%lf %lf”,&amp;p[i].x,&amp;p[i].y);<br>        sort(p , p + n , cmpx);//按x坐标进行升序排序<br>        printf(“%.2lf\n”,closest(0 , n - 1)/2);//最近点对间的距离<br>    }<br>    return 0;<br>}</k;i++)></p>
+<p>double closest(int low,int high)//求最近点对<br>{<br>    int i,j,k;<br>    if(low+1==high)//只有两个点<br>        return dis(p[low],p[high]);<br>    if(low+2==high)//只有三个点<br>        return min(dis(p[low],p[high]),min(dis(p[low],p[low+1]),dis(p[low+1],p[high])));<br>    int mid=(low+high)&gt;&gt;1;//求中点即左右子集的分界线<br>    double d=min(closest(low,mid),closest(mid+1,high));//此处递归，递归出除了在中点左边和中点右边的最小两点间距离d_min<br>    for(i=low,k=0;i&lt;=high;i++)//找出x坐标为(mid-d_min,mid+d_min)的点<br>    {<br>        if(p[i].x &gt;=p[mid].x-d&amp;&amp;p[i].x&lt;=p[mid].x+d)<br>            a[k++]=i;//保存这些点的下标索引<br>    }<br>    sort(a,a+k,cmpy);//按y坐标进行升序排序<br>    for(i=0;i<k;i++) {="" for(j="i+1;j<k;j++)" if(p[a[j]].y-p[a[i]].y="">=d)//如果两点间y的差值都比d_min大了，那么该两点的距离肯定比d_min大，所以这样的点直接break，不考虑。<br>                break;<br>            d=min(d,dis(p[a[i]],p[a[j]]));<br>        }<br>    }<br>    return d;<br>}<br>int main()<br>{<br>    int i,n;<br>    while(scanf(“%d”,&amp;n) &amp;&amp; n!= 0)//n个点<br>    {<br>        for(i = 0 ; i &lt; n ; ++i)<br>            scanf(“%lf %lf”,&amp;p[i].x,&amp;p[i].y);<br>        sort(p , p + n , cmpx);//按x坐标进行升序排序<br>        printf(“%.2f\n”,closest(0 , n - 1)/2);//最近点对间的距离<br>    }<br>    return 0;<br>}</k;i++)></p>
 
       
     </div>
