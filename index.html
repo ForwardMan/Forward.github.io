@@ -229,7 +229,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/27/hdu157/" itemprop="url">
+                <a class="post-title-link" href="/2016/06/28/hdu157/" itemprop="url">
                   扩展欧几里得
                 </a>
               
@@ -243,8 +243,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-27T23:00:00+08:00" content="2016-06-27">
-              2016-06-27
+            <time itemprop="dateCreated" datetime="2016-06-28T23:04:00+08:00" content="2016-06-28">
+              2016-06-28
             </time>
           </span>
 
@@ -277,6 +277,45 @@
 <h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><p>int extend_gcd(int a,int b,int &amp;x,int &amp;y)<br>{<br>    if(b == 0)//当b = 0;则此时根据x<em>a+y</em>b = gcd(a,b) 则gcd(a,b) = a,x = 1, y = 0;<br>    {<br>        x = 1;<br>        y = 0;<br>        return a;//返回最大公倍数<br>    }<br>    int ans = extend_gcd(b,a%b,x,y);//递归直到b = 0.<br>    int t = x;<br>    x = y;<br>    y = t - a/b*y;<br>    return ans;<br>}</p>
 <h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>当实现一次递归时，a’ = b, b’ = a%b; 且有x<em>a’ + y</em>b’ = gcd(a’,b’);<br>因为 b’ = a%b = a - a/b<em>b; gcd(a’,b’) = gcd(a,b);<br>所以 x</em>b + y<em>(a-a/b</em>b) = gcd(a,b);<br>     整理得 y<em>a + b</em>(x-a/b<em>y) = gcd(a,b);<br>所以 x = y, y = a-a/b</em>y; 就可以求出x,y.</p>
 <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>hdu1576</p>
+<p>代码：</p>
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define BGT 9999999
+#define ll long long
+#define M 9973
+void extend_gcd(ll a,ll b, ll &amp;x, ll &amp;y)
+{
+    if(b == 0)
+    {
+        x = 1;
+        y = 0;
+        return ;
+    }
+    else{
+        extend_gcd(b,a%b,x,y);
+        ll t = x;
+        x = y;
+        y = t - a/b*y;
+    }
+}
+int main(int argc, char const *argv[])
+{
+    int T;
+    ll n,b,x,y;
+    cin&gt;&gt;T;
+    while(T--)
+    {
+        cin&gt;&gt;n&gt;&gt;b;
+        extend_gcd(b,M,x,y);
+        ll ans = x*n;
+        ans = (ans%M + M)%M;
+        cout&lt;&lt;ans&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre><p>解析：设ans=(A/B)%9973,则 ans+9973<em>x=A/B,两边乘以B，得ans</em>B+9973<em>x</em>B=A (1),<br>      又因为 A%9973=n, 则 9973<em>y+n=A (2)，代入（1）并整理得：<br>                ans</em>B/n + 9973<em>x</em>B/n = 1   此式子与gcd(B,9973) = 1,可有<br>                B<em>X + 9973</em>Y = gcd(B,9973) = 1 （3）<br>            则用扩展欧几里德即可求出X，则ans = X*n;<br>        注意：此时的ans可能为负值，使他变成正值且又满足题意，则：<br>                ans = (ans%9973+9973)%9973 （4）<br>                因为X和Y是不定解，所以ans也是不定解。通过（4）的变换后<br>                可以把负的变成正的，且同时满足（3）。<br>            这里补充一点，负数的取余和mod是不一样的。<br>              -3%2=-1,而-3mod2=1,可以理解为-3mod2=(-3%2)+2 , 这就是为什么要做（4）的变换的原因。<br>对于这类问题，我还是没有理解透彻，可能我一辈子都不会理解透彻。所以我决定每当我理解多一点，那我就更博一次。</p>
 
           
         

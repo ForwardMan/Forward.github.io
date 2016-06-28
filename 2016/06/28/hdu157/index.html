@@ -80,22 +80,19 @@
 
 
 
-<meta name="description" content="问题给出一大堆点p1(x1,y1),p2(x2,y2)….pn(xn,yn),求xoy平面中距离最近的两个点。
-方法思路分治法，先按x升序排列，用递归求除了在中点左边和中点右边的最小两点间距离d_min，然后再选择x坐标为(mid-d_min,mid+d_min)之间的距离，此时按照y升序排列，然后在求出其最小值（这里不能用递归了，直接比较）。
-代码板子struct point//用结构体保存每">
+<meta name="description" content="扩展欧几里得算法已经知道gcd可以求两个数的最大公约数。已知一定存在 xa + xb = gcd(a,b)（x,y皆为整数） , 求解未知数x,y.
+模板int extend_gcd(int a,int b,int &amp;amp;x,int &amp;amp;y){    if(b == 0)//当b = 0;则此时根据xa+yb = gcd(a,b) 则gcd(a,b) = a,x = 1, y = 0;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分治法求最近点对">
-<meta property="og:url" content="http://yoursite.com/2016/05/16/【ACM】最近点对/index.html">
+<meta property="og:title" content="扩展欧几里得">
+<meta property="og:url" content="http://yoursite.com/2016/06/28/hdu157/index.html">
 <meta property="og:site_name" content="Forward">
-<meta property="og:description" content="问题给出一大堆点p1(x1,y1),p2(x2,y2)….pn(xn,yn),求xoy平面中距离最近的两个点。
-方法思路分治法，先按x升序排列，用递归求除了在中点左边和中点右边的最小两点间距离d_min，然后再选择x坐标为(mid-d_min,mid+d_min)之间的距离，此时按照y升序排列，然后在求出其最小值（这里不能用递归了，直接比较）。
-代码板子struct point//用结构体保存每">
-<meta property="og:updated_time" content="2016-06-01T06:08:10.296Z">
+<meta property="og:description" content="扩展欧几里得算法已经知道gcd可以求两个数的最大公约数。已知一定存在 xa + xb = gcd(a,b)（x,y皆为整数） , 求解未知数x,y.
+模板int extend_gcd(int a,int b,int &amp;amp;x,int &amp;amp;y){    if(b == 0)//当b = 0;则此时根据xa+yb = gcd(a,b) 则gcd(a,b) = a,x = 1, y = 0;">
+<meta property="og:updated_time" content="2016-06-28T15:05:00.023Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分治法求最近点对">
-<meta name="twitter:description" content="问题给出一大堆点p1(x1,y1),p2(x2,y2)….pn(xn,yn),求xoy平面中距离最近的两个点。
-方法思路分治法，先按x升序排列，用递归求除了在中点左边和中点右边的最小两点间距离d_min，然后再选择x坐标为(mid-d_min,mid+d_min)之间的距离，此时按照y升序排列，然后在求出其最小值（这里不能用递归了，直接比较）。
-代码板子struct point//用结构体保存每">
+<meta name="twitter:title" content="扩展欧几里得">
+<meta name="twitter:description" content="扩展欧几里得算法已经知道gcd可以求两个数的最大公约数。已知一定存在 xa + xb = gcd(a,b)（x,y皆为整数） , 求解未知数x,y.
+模板int extend_gcd(int a,int b,int &amp;amp;x,int &amp;amp;y){    if(b == 0)//当b = 0;则此时根据xa+yb = gcd(a,b) 则gcd(a,b) = a,x = 1, y = 0;">
 
 
 
@@ -113,7 +110,7 @@
   };
 </script>
 
-  <title> 分治法求最近点对 | Forward </title>
+  <title> 扩展欧几里得 | Forward </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -233,7 +230,7 @@
             
             
               
-                分治法求最近点对
+                扩展欧几里得
               
             
           </h1>
@@ -245,8 +242,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-16T14:53:00+08:00" content="2016-05-16">
-              2016-05-16
+            <time itemprop="dateCreated" datetime="2016-06-28T23:04:00+08:00" content="2016-06-28">
+              2016-06-28
             </time>
           </span>
 
@@ -273,14 +270,49 @@
       
 
       
-        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>给出一大堆点p1(x1,y1),p2(x2,y2)….pn(xn,yn),求xoy平面中距离最近的两个点。</p>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>分治法，先按x升序排列，用递归求除了在中点左边和中点右边的最小两点间距离d_min，然后再选择x坐标为(mid-d_min,mid+d_min)之间的距离，此时按照y升序排列，然后在求出其最小值（这里不能用递归了，直接比较）。</p>
-<h2 id="代码板子"><a href="#代码板子" class="headerlink" title="代码板子"></a>代码板子</h2><p>struct point//用结构体保存每一个点<br>{<br>    double x,y;<br>}p[maxn];</p>
-<p>int a[maxn];//保存筛选的坐标点的索引即2min(dl,dh)区间的坐标点索引</p>
-<p>int cmpx(point a,point b)//对n个点按横坐标由小到大排序<br>{<br>    return a.x&lt;b.x;<br>}</p>
-<p>int cmpy(int a,int b)//（这里用的是下标索引）对筛选的点按纵坐标由小到大排序<br>{<br>    return p[a].y&lt;p[b].y;<br>}</p>
-<p>inline double dis(point a,point b)//求点对间的距离<br>{<br>    return sqrt((a.x-b.x)<em>(a.x-b.x)+(a.y-b.y)</em>(a.y-b.y));<br>}</p>
-<p>double closest(int low,int high)//求最近点对<br>{<br>    int i,j,k;<br>    if(low+1==high)//只有两个点<br>        return dis(p[low],p[high]);<br>    if(low+2==high)//只有三个点<br>        return min(dis(p[low],p[high]),min(dis(p[low],p[low+1]),dis(p[low+1],p[high])));<br>    int mid=(low+high)&gt;&gt;1;//求中点即左右子集的分界线<br>    double d=min(closest(low,mid),closest(mid+1,high));//此处递归，递归出除了在中点左边和中点右边的最小两点间距离d_min<br>    for(i=low,k=0;i&lt;=high;i++)//找出x坐标为(mid-d_min,mid+d_min)的点<br>    {<br>        if(p[i].x &gt;=p[mid].x-d&amp;&amp;p[i].x&lt;=p[mid].x+d)<br>            a[k++]=i;//保存这些点的下标索引<br>    }<br>    sort(a,a+k,cmpy);//按y坐标进行升序排序<br>    for(i=0;i<k;i++) {="" for(j="i+1;j<k;j++)" if(p[a[j]].y-p[a[i]].y="">=d)//如果两点间y的差值都比d_min大了，那么该两点的距离肯定比d_min大，所以这样的点直接break，不考虑。<br>                break;<br>            d=min(d,dis(p[a[i]],p[a[j]]));<br>        }<br>    }<br>    return d;<br>}<br>int main()<br>{<br>    int i,n;<br>    while(scanf(“%d”,&amp;n) &amp;&amp; n!= 0)//n个点<br>    {<br>        for(i = 0 ; i &lt; n ; ++i)<br>            scanf(“%lf %lf”,&amp;p[i].x,&amp;p[i].y);<br>        sort(p , p + n , cmpx);//按x坐标进行升序排序<br>        printf(“%.2f\n”,closest(0 , n - 1)/2);//最近点对间的距离<br>    }<br>    return 0;<br>}</k;i++)></p>
+        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h1><p>已经知道gcd可以求两个数的最大公约数。<br>已知一定存在 x<em>a + x</em>b = gcd(a,b)（x,y皆为整数） , 求解未知数x,y.</p>
+<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><p>int extend_gcd(int a,int b,int &amp;x,int &amp;y)<br>{<br>    if(b == 0)//当b = 0;则此时根据x<em>a+y</em>b = gcd(a,b) 则gcd(a,b) = a,x = 1, y = 0;<br>    {<br>        x = 1;<br>        y = 0;<br>        return a;//返回最大公倍数<br>    }<br>    int ans = extend_gcd(b,a%b,x,y);//递归直到b = 0.<br>    int t = x;<br>    x = y;<br>    y = t - a/b*y;<br>    return ans;<br>}</p>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>当实现一次递归时，a’ = b, b’ = a%b; 且有x<em>a’ + y</em>b’ = gcd(a’,b’);<br>因为 b’ = a%b = a - a/b<em>b; gcd(a’,b’) = gcd(a,b);<br>所以 x</em>b + y<em>(a-a/b</em>b) = gcd(a,b);<br>     整理得 y<em>a + b</em>(x-a/b<em>y) = gcd(a,b);<br>所以 x = y, y = a-a/b</em>y; 就可以求出x,y.</p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>hdu1576</p>
+<p>代码：</p>
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define BGT 9999999
+#define ll long long
+#define M 9973
+void extend_gcd(ll a,ll b, ll &amp;x, ll &amp;y)
+{
+    if(b == 0)
+    {
+        x = 1;
+        y = 0;
+        return ;
+    }
+    else{
+        extend_gcd(b,a%b,x,y);
+        ll t = x;
+        x = y;
+        y = t - a/b*y;
+    }
+}
+int main(int argc, char const *argv[])
+{
+    int T;
+    ll n,b,x,y;
+    cin&gt;&gt;T;
+    while(T--)
+    {
+        cin&gt;&gt;n&gt;&gt;b;
+        extend_gcd(b,M,x,y);
+        ll ans = x*n;
+        ans = (ans%M + M)%M;
+        cout&lt;&lt;ans&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre><p>解析：设ans=(A/B)%9973,则 ans+9973<em>x=A/B,两边乘以B，得ans</em>B+9973<em>x</em>B=A (1),<br>      又因为 A%9973=n, 则 9973<em>y+n=A (2)，代入（1）并整理得：<br>                ans</em>B/n + 9973<em>x</em>B/n = 1   此式子与gcd(B,9973) = 1,可有<br>                B<em>X + 9973</em>Y = gcd(B,9973) = 1 （3）<br>            则用扩展欧几里德即可求出X，则ans = X*n;<br>        注意：此时的ans可能为负值，使他变成正值且又满足题意，则：<br>                ans = (ans%9973+9973)%9973 （4）<br>                因为X和Y是不定解，所以ans也是不定解。通过（4）的变换后<br>                可以把负的变成正的，且同时满足（3）。<br>            这里补充一点，负数的取余和mod是不一样的。<br>              -3%2=-1,而-3mod2=1,可以理解为-3mod2=(-3%2)+2 , 这就是为什么要做（4）的变换的原因。<br>对于这类问题，我还是没有理解透彻，可能我一辈子都不会理解透彻。所以我决定每当我理解多一点，那我就更博一次。</p>
 
       
     </div>
@@ -310,17 +342,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/12/我/" rel="next" title="大学及未来生涯规划">
-                <i class="fa fa-chevron-left"></i> 大学及未来生涯规划
+              <a href="/2016/05/16/【ACM】最近点对/" rel="next" title="分治法求最近点对">
+                <i class="fa fa-chevron-left"></i> 分治法求最近点对
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/28/hdu157/" rel="prev" title="扩展欧几里得">
-                扩展欧几里得 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -427,7 +455,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码板子"><span class="nav-number">2.2.</span> <span class="nav-text">代码板子</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展欧几里得算法"><span class="nav-number">1.</span> <span class="nav-text">扩展欧几里得算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板"><span class="nav-number">2.</span> <span class="nav-text">模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原理"><span class="nav-number">3.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">4.</span> <span class="nav-text">题目</span></a></li></ol></div>
             
           </div>
         </section>
