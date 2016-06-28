@@ -229,6 +229,103 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/27/hdu157/" itemprop="url">
+                  分治法求最近点对
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-27T23:00:00+08:00" content="2016-06-27">
+              2016-06-27
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h1><p>已经知道gcd可以求两个数的最大公约数。<br>已知一定存在 x<em>a + x</em>b = gcd(a,b)（x,y皆为整数） , 求解未知数x,y.</p>
+<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><p>int extend_gcd(int a,int b,int &amp;x,int &amp;y)<br>{<br>    if(b == 0)//当b = 0;则此时根据x<em>a+y</em>b = gcd(a,b) 则gcd(a,b) = a,x = 1, y = 0;<br>    {<br>        x = 1;<br>        y = 0;<br>        return a;//返回最大公倍数<br>    }<br>    int ans = extend_gcd(b,a%b,x,y);//递归直到b = 0.<br>    int t = x;<br>    x = y;<br>    y = t - a/b*y;<br>    return ans;<br>}</p>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>当实现一次递归时，a’ = b, b’ = a%b; 且有x<em>a’ + y</em>b’ = gcd(a’,b’);<br>因为 b’ = a%b = a - a/b<em>b; gcd(a’,b’) = gcd(a,b);<br>所以 x</em>b + y<em>(a-a/b</em>b) = gcd(a,b);<br>     整理得 y<em>a + b</em>(x-a/b<em>y) = gcd(a,b);<br>所以 x = y, y = a-a/b</em>y; 就可以求出x,y.</p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>hdu1576</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/16/【ACM】最近点对/" itemprop="url">
                   分治法求最近点对
                 </a>
@@ -1045,7 +1142,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
