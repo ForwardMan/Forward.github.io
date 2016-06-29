@@ -229,6 +229,173 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/29/[数论]题解+规律总结/" itemprop="url">
+                  【数论】题解+规律总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-29T22:04:00+08:00" content="2016-06-29">
+              2016-06-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="规律"><a href="#规律" class="headerlink" title="规律"></a>规律</h1><p>1、任何一个数mod9都等于其各个位上的数之和再mod9</p>
+<pre><code>例如：12345%9 = (1+2+3+4+5)%9 
+</code></pre><h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><pre><code>1、  Goldbach&apos;s Conjecture
+
+In 1742, Christian Goldbach, a German amateur mathematician, sent a letter to Leonhard Euler in which he made the following conjecture: 
+Every even number greater than 4 can be 
+written as the sum of two odd prime numbers.
+
+For example: 
+8 = 3 + 5. Both 3 and 5 are odd prime numbers. 
+20 = 3 + 17 = 7 + 13. 
+42 = 5 + 37 = 11 + 31 = 13 + 29 = 19 + 23.
+
+Today it is still unproven whether the conjecture is right. (Oh wait, I have the proof of course, but it is too long to write it on the margin of this page.) 
+Anyway, your task is now to verify Goldbach&apos;s conjecture for all even numbers less than a million. 
+Input
+The input will contain one or more test cases. 
+Each test case consists of one even integer n with 6 &lt;= n &lt; 1000000. 
+Input will be terminated by a value of 0 for n.
+Output
+For each test case, print one line of the form n = a + b, where a and b are odd primes. Numbers and operators should be separated by exactly one blank like in the sample output below. If there is more than one pair of odd primes adding up to n, choose the pair where the difference b - a is maximized. If there is no such pair, print a line saying &quot;Goldbach&apos;s conjecture is wrong.&quot;
+Sample Input
+8
+20
+42
+0
+Sample Output
+8 = 3 + 5
+20 = 3 + 17
+42 = 5 + 37
+</code></pre><p>心得：筛素数时，一次就够，不要因为是多组数据而重复筛，不然会T。<br>    ll定义的数也要用相应的‘%I64d’输出。<br>    <em>*</em>之间的为高效率筛素数。</p>
+<p>代码：</p>
+<pre><code>//***
+ll prime[1000005];
+int visit[1000005];
+int nm;
+int init_prim(ll n)  {
+    memset(visit, 0, sizeof(visit));
+    nm = 0;
+   for (int i = 2; i &lt;= n; ++i)  {
+       if (visit[i] == 0)  {
+            nm++;
+            prime[nm] = i;
+        }
+       for (int j = 1; ((j &lt;= nm) &amp;&amp; (i * prime[j] &lt;= n));  ++j)  {
+            visit[i * prime[j]] = 1;
+           if (i % prime[j] == 0) break; //进一步提高效率
+      }
+ }
+ //***
+return nm;//返回质数个数
+}
+int main()
+{
+    ll num,maxx;
+    init_prim(1000000);//在输入之前就筛一个足够大的数据。
+  while(scanf(&quot;%I64d&quot;,&amp;num) &amp;&amp; num!= 0)
+    {
+        maxx = 0;
+        int p1 = 0,p2 = 0,j;
+        for(int i = 1; i &lt; nm; i++)
+        {
+            j = num-prime[i];
+            if(visit[j] == 0)
+            {
+                p1 = j;
+                p2 = i;
+                break;
+            }
+        }
+            printf(&quot;%I64d = %I64d + %d\n&quot;,num,prime[p2],p1);
+    }
+    return 0;
+}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/29/hdu 260/" itemprop="url">
                   DP
                 </a>
@@ -358,7 +525,7 @@
               
                 
                 <a class="post-title-link" href="/2016/06/28/hdu157/" itemprop="url">
-                  扩展欧几里德
+                  数论板子
                 </a>
               
             
@@ -402,9 +569,9 @@
         
           
             <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h1><p>已经知道gcd可以求两个数的最大公约数。<br>已知一定存在 x<em>a + x</em>b = gcd(a,b)（x,y皆为整数） , 求解未知数x,y.</p>
-<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><p>int extend_gcd(int a,int b,int &amp;x,int &amp;y)<br>{<br>    if(b == 0)//当b = 0;则此时根据x<em>a+y</em>b = gcd(a,b) 则gcd(a,b) = a,x = 1, y = 0;<br>    {<br>        x = 1;<br>        y = 0;<br>        return a;//返回最大公倍数<br>    }<br>    int ans = extend_gcd(b,a%b,x,y);//递归直到b = 0.<br>    int t = x;<br>    x = y;<br>    y = t - a/b*y;<br>    return ans;<br>}</p>
-<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>当实现一次递归时，a’ = b, b’ = a%b; 且有x<em>a’ + y</em>b’ = gcd(a’,b’);<br>因为 b’ = a%b = a - a/b<em>b; gcd(a’,b’) = gcd(a,b);<br>所以 x</em>b + y<em>(a-a/b</em>b) = gcd(a,b);<br>     整理得 y<em>a + b</em>(x-a/b<em>y) = gcd(a,b);<br>所以 x = y, y = a-a/b</em>y; 就可以求出x,y.</p>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>hdu1576</p>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>int extend_gcd(int a,int b,int &amp;x,int &amp;y)<br>{<br>    if(b == 0)//当b = 0;则此时根据x<em>a+y</em>b = gcd(a,b) 则gcd(a,b) = a,x = 1, y = 0;<br>    {<br>        x = 1;<br>        y = 0;<br>        return a;//返回最大公倍数<br>    }<br>    int ans = extend_gcd(b,a%b,x,y);//递归直到b = 0.<br>    int t = x;<br>    x = y;<br>    y = t - a/b*y;<br>    return ans;<br>}</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>当实现一次递归时，a’ = b, b’ = a%b; 且有x<em>a’ + y</em>b’ = gcd(a’,b’);<br>因为 b’ = a%b = a - a/b<em>b; gcd(a’,b’) = gcd(a,b);<br>所以 x</em>b + y<em>(a-a/b</em>b) = gcd(a,b);<br>     整理得 y<em>a + b</em>(x-a/b<em>y) = gcd(a,b);<br>所以 x = y, y = a-a/b</em>y; 就可以求出x,y.</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>hdu1576</p>
 <p>代码：</p>
 <pre><code>#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
@@ -444,6 +611,18 @@ int main(int argc, char const *argv[])
     return 0;
 }
 </code></pre><p>解析：设ans=(A/B)%9973,则 ans+9973<em>x=A/B,两边乘以B，得ans</em>B+9973<em>x</em>B=A (1),<br>      又因为 A%9973=n, 则 9973<em>y+n=A (2)，代入（1）并整理得：<br>                ans</em>B/n + 9973<em>x</em>B/n = 1   此式子与gcd(B,9973) = 1,可有<br>                B<em>X + 9973</em>Y = gcd(B,9973) = 1 （3）<br>            则用扩展欧几里德即可求出X，则ans = X*n;<br>        注意：此时的ans可能为负值，使他变成正值且又满足题意，则：<br>                ans = (ans%9973+9973)%9973 （4）<br>                因为X和Y是不定解，所以ans也是不定解。通过（4）的变换后<br>                可以把负的变成正的，且同时满足（3）。<br>            这里补充一点，负数的取余和mod是不一样的。<br>              -3%2=-1,而-3mod2=1,可以理解为-3mod2=(-3%2)+2 , 这就是为什么要做（4）的变换的原因。<br>对于这类问题，我还是没有理解透彻，可能我一辈子都不会理解透彻。所以我决定每当我理解多一点，那我就更博一次。</p>
+<h1 id="筛选法素数"><a href="#筛选法素数" class="headerlink" title="筛选法素数"></a>筛选法素数</h1><h2 id="板子"><a href="#板子" class="headerlink" title="板子"></a>板子</h2><pre><code>int init_prim(int n)  {  
+    memset(visit, true, sizeof(visit));  
+   int num = 0;  
+   for (int i = 2; i &lt;= n; ++i)  {  
+       if (visit[i] == true)  {  
+            num++;  
+            prime[num] = i;  
+        }  
+       for (int j = 1; ((j &lt;= num) &amp;&amp; (i * prime[j] &lt;= n));  ++j)  {  
+            visit[i * prime[j]] = false;  
+           if (i % prime[j] == 0) break; //避免重复，进一步提高效率
+</code></pre><h2 id="解析原理"><a href="#解析原理" class="headerlink" title="解析原理"></a>解析原理</h2><p>把2到n内的所有素数都依次放进prime数组中。<br>把2的倍数4筛掉，再把3的倍数6筛掉，把5的倍数筛掉，把7的倍数筛掉 …..<br>筛掉的方法是visit布尔数组，如果是以上这些素数的倍数的，则让visit为false,当为相应false时，prime不存进相应的值，即筛掉！！！</p>
 
           
         
@@ -1166,111 +1345,13 @@ int main(int argc, char const *argv[])
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/29/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-29T23:20:40+08:00" content="2016-04-29">
-              2016-04-29
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1309,7 +1390,7 @@ int main(int argc, char const *argv[])
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
