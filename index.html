@@ -229,6 +229,158 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/01/杂板/" itemprop="url">
+                  杂板
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-01T11:00:00+08:00" content="2016-07-01">
+              2016-07-01
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h1><pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;queue&gt;
+#include &lt;stack&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+</code></pre><h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="普通倒排"><a href="#普通倒排" class="headerlink" title="普通倒排"></a>普通倒排</h2><pre><code>bool cmp(int x,int y)
+{
+        return x&gt;y;
+}
+sort(a,a+num,cmp);
+</code></pre><h2 id="结构体排序"><a href="#结构体排序" class="headerlink" title="结构体排序"></a>结构体排序</h2><pre><code>bool cmp(node x,node y)
+{
+ if(x.a!=y.a) return x.a
+
+if(x.b!=y.b) return x.b&gt;y.b;
+ return return x.c&gt;y.c;
+} 排序时写sort(arr,a+100,cmp);
+</code></pre><h2 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h2><pre><code>void Qsort(int a[], int p, int r)
+{
+    if (p&gt;=r) {//用来结束排好的部分数组
+        return ;
+    }
+    int i,j; //把大于r和小于r之间的数进行一定的排序
+    for (i = p; i &lt; r; i ++)
+        if (a[i] &gt; a[r])
+            break;
+    for (j = i ; j &lt; r; j ++)
+        if (a[j] &lt;= a[r])
+            break;
+    for (int k = j; k &lt; r; k ++) {
+        if (a[k] &lt;= a[r]) {
+            int temp = a[i];
+            a[i] = a[k];
+            a[k] = temp;
+            i++;
+        }
+    }
+    int temp = a[i]; //把大于a[r]的放在a[r]的右边，小于a[r]的放在a[r]的左边，即分治。
+    a[i] = a[r];
+    a[r] = temp;
+    Qsort(a, p, i-1);
+    Qsort(a, i+1, r);
+    return ;
+}
+int main()
+{
+    int a[] = {9,7,5,11,12,2,14,3,10,6};
+    Qsort(a, 0, 9);
+    for (int i = 0; i &lt; sizeof(a)/sizeof(int); i++) {
+        cout&lt;&lt;a[i]&lt;&lt;&apos; &apos;;
+    }
+    return 0;
+}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/29/[数论]题解+规律总结/" itemprop="url">
                   【数论】题解+规律总结
                 </a>
@@ -1247,104 +1399,6 @@ int main(int argc, char const *argv[])
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/30/New/" itemprop="url">
-                  Start !
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-30T02:25:38+08:00" content="2016-04-30">
-              2016-04-30
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="这是我人生中的第一个个人blog"><a href="#这是我人生中的第一个个人blog" class="headerlink" title="这是我人生中的第一个个人blog"></a>这是我人生中的第一个个人blog</h1><p>  一连好几个小时的挣扎，终于搭建好了我的第一个blog。首先得多谢三星的教程和指导<br> 也许这个blog来得有点太迟，而今的我，已经年过20.<br> 这是一个新的起点，开始了我的share<br> 很喜欢泰戈尔的一句诗 :</p>
-<blockquote>
-<p>Let life be beautiful like summer flowers and death like autumn leaves .</p>
-</blockquote>
-<p>  Now , enjoy the beautiful summer flowers heartly !</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1390,7 +1444,7 @@ int main(int argc, char const *argv[])
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
