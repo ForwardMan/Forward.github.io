@@ -229,6 +229,104 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/11/只需努力/" itemprop="url">
+                  你只管负责精彩，老天自有安排。
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-11T12:00:00+08:00" content="2016-07-11">
+              2016-07-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><pre><code>（说那么多感慨没用）拼搏吧~  
+           但行好事，莫问前程。
+       你只管负责精彩，老天自有安排。
+           Today is a beautiful day.
+                 thank
+</code></pre>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/01/杂板/" itemprop="url">
                   杂板
                 </a>
@@ -283,6 +381,7 @@
 #include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;algorithm&gt;
+#include &lt;string&gt;
 using namespace std;
 </code></pre><h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="普通倒排"><a href="#普通倒排" class="headerlink" title="普通倒排"></a>普通倒排</h2><pre><code>bool cmp(int x,int y)
 {
@@ -332,7 +431,50 @@ int main()
     }
     return 0;
 }
-</code></pre>
+</code></pre><h1 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h1><p>/** </p>
+<ul>
+<li>广度优先搜索 </li>
+<li>@param Vs 起点 </li>
+<li><p>@param Vd 终点<br>*/ </p>
+<p> int dx[4]={0,1,0,-1};//标记方向，上下左右。<br> int dy[4]={1,0,-1,0};</p>
+<pre><code> bool BFS(Node&amp; Vs, Node&amp; Vd){  
+     queue&lt;node&gt; Q;  
+     Node Vn, Vw;  
+     int i;  
+bool isvalid(int x,int y)//判断是否合法
+</code></pre><p> {</p>
+<pre><code>if(边界。。。)
+    return false;
+if(限制点1.。。)
+    return true;
+if(限制点2.。。)
+    return false;
+return true;
+</code></pre><p> }</p>
+<p> //初始状态将起点放进队列Q<br> Q.push(Vs);<br> hash(Vw) = true;//设置节点已经访问过了！  </p>
+<p> while (!Q.empty()){//队列不为空，继续搜索！  </p>
+<pre><code>//取出队列的头Vn  
+Vn = Q.front();  
+
+//从队列中移除  
+Q.pop();  
+
+while(Vw = Vn通过某规则能够到达的节点){  
+    if (Vw == Vd){//找到终点了！  
+        //把路径记录，这里没给出解法  
+        return true;//返回  
+    }  
+
+    if (isvalid(Vw) &amp;&amp; !visit[Vw]){  
+        //Vw是一个合法的节点并且为白色节点  
+        Q.push(Vw);//加入队列Q  
+        hash(Vw) = true;//设置节点颜色  
+    }  
+}  
+</code></pre><p> }<br> return false;//无解<br>}  </p>
+</li>
+</ul>
+
           
         
       
@@ -425,9 +567,8 @@ int main()
       
         
           
-            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="规律"><a href="#规律" class="headerlink" title="规律"></a>规律</h1><p>1、任何一个数mod9都等于其各个位上的数之和再mod9</p>
-<pre><code>例如：12345%9 = (1+2+3+4+5)%9 
-</code></pre><h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><pre><code>1、  Goldbach&apos;s Conjecture
+            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="规律"><a href="#规律" class="headerlink" title="规律"></a>规律</h1><p>1、任何一个数mod9都等于其各个位上的数之和再mod9<br>    例如：12345%9 = (1+2+3+4+5)%9<br>2、爬楼梯的爬法问题：利用斐波那契法，推出前面台阶的爬法，再依次累加。<br>    例如：有两种情况，每次上一阶和每次两阶。1阶是1办法，两阶是2种办法，则三阶是1+2 = 3 种办法。<br>3、一个圆，任意划N条线，最多能分成 （n*n+n)/2 + 1 个部分。</p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><pre><code>1、  Goldbach&apos;s Conjecture
 
 In 1742, Christian Goldbach, a German amateur mathematician, sent a letter to Leonhard Euler in which he made the following conjecture: 
 Every even number greater than 4 can be 
@@ -721,8 +862,21 @@ int main()
         
           
             <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h1><p>已经知道gcd可以求两个数的最大公约数。<br>已知一定存在 x<em>a + x</em>b = gcd(a,b)（x,y皆为整数） , 求解未知数x,y.</p>
-<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>int extend_gcd(int a,int b,int &amp;x,int &amp;y)<br>{<br>    if(b == 0)//当b = 0;则此时根据x<em>a+y</em>b = gcd(a,b) 则gcd(a,b) = a,x = 1, y = 0;<br>    {<br>        x = 1;<br>        y = 0;<br>        return a;//返回最大公倍数<br>    }<br>    int ans = extend_gcd(b,a%b,x,y);//递归直到b = 0.<br>    int t = x;<br>    x = y;<br>    y = t - a/b*y;<br>    return ans;<br>}</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>当实现一次递归时，a’ = b, b’ = a%b; 且有x<em>a’ + y</em>b’ = gcd(a’,b’);<br>因为 b’ = a%b = a - a/b<em>b; gcd(a’,b’) = gcd(a,b);<br>所以 x</em>b + y<em>(a-a/b</em>b) = gcd(a,b);<br>     整理得 y<em>a + b</em>(x-a/b<em>y) = gcd(a,b);<br>所以 x = y, y = a-a/b</em>y; 就可以求出x,y.</p>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><pre><code>int extend_gcd(int a,int b,int &amp;x,int &amp;y)
+{
+    if(b == 0)//当b = 0;则此时根据x*a+y*b = gcd(a,b) 则gcd(a,b) = a,x = 1, y = 0;
+    {
+        x = 1;
+        y = 0;
+        return a;//返回最大公倍数
+    }
+    int ans = extend_gcd(b,a%b,x,y);//递归直到b = 0.
+    int t = x;
+    x = y;
+    y = t - a/b*y;
+    return ans;
+}
+</code></pre><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>当实现一次递归时，a’ = b, b’ = a%b; 且有x<em>a’ + y</em>b’ = gcd(a’,b’);<br>因为 b’ = a%b = a - a/b<em>b; gcd(a’,b’) = gcd(a,b);<br>所以 x</em>b + y<em>(a-a/b</em>b) = gcd(a,b);<br>     整理得 y<em>a + b</em>(x-a/b<em>y) = gcd(a,b);<br>所以 x = y, y = a-a/b</em>y; 就可以求出x,y.</p>
 <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>hdu1576</p>
 <p>代码：</p>
 <pre><code>#include &lt;cstdio&gt;
@@ -1300,105 +1454,6 @@ int main(int argc, char const *argv[])
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/30/day/" itemprop="url">
-                  when ten years goes.
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-30T04:10:38+08:00" content="2016-04-30">
-              2016-04-30
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="朋友，像一杯酒，像一首老歌-。"><a href="#朋友，像一杯酒，像一首老歌-。" class="headerlink" title="朋友，像一杯酒，像一首老歌  。"></a>朋友，像一杯酒，像一首老歌  。</h1><p>恍恍惚惚，高中毕业快一年了。不知道当初一起同窗共苦的你们现在过得怎么样？</p>
-<p>深夜，总是容易让人迷醉，特别是在这样一个满是霓虹的大都市里。</p>
-<p>##那些迷茫而深沉的日子<br>  不知道是不是我帮你们提高了你们的酒量，呵呵~  那时盛夏的夜晚，在6楼的楼梯里，我们就光着身子，用那几罐啤酒，聊尽了一生的往事。<br>  是的，相信那时我们都很迷茫，未来，怎么来？<br>  第二天起床，也许我们都感到有种罪恶感。但是现在回想起来，我感到了一种深沉。人生知知己己，哪才能找来你们两个，同我一起，在青春中染色！</p>
-<p>##蒹葭苍苍  白露为霜<br>    那时我们都是纯情的少年，有心上人，却都渐行渐远（当然高中毕业后超宇终成眷属），而我现在回想的不是那时的那位女孩，而是你们陪我吐露心伤的日子。当然我一直都是洒洒脱脱的样子~</p>
-<p>##十年之约-<br>    那天我说我们似乎少了点什么东西，就像三条各自奔向大海的三只小船，没有什么牵连，这让我感到不安。 所以我才有了十年之约的这个想法，就这样，我说了算，十年之约就生效了（至于内容—~）。<br><img src="/images/psbb.png" alt="frienfbrother"></p>
-<p>为了我们的年头，为了我们的永远的情谊，为了十年之约，来啊~  好兄弟，干上一杯 ！</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1444,7 +1499,7 @@ int main(int argc, char const *argv[])
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
