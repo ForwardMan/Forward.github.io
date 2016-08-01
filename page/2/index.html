@@ -229,6 +229,104 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/02/code/" itemprop="url">
+                  【数论】gcd && lcm
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-02T13:58:00+08:00" content="2016-05-02">
+              2016-05-02
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="gcd（欧几里德）求最大公约数"><a href="#gcd（欧几里德）求最大公约数" class="headerlink" title="gcd（欧几里德）求最大公约数"></a>gcd（欧几里德）求最大公约数</h1><p>用一般的方法去求最大公约数会费时很多，如果位数上升到18位数的时候，再一个个的去求，那就太浪费生命了。<br>那就用一个高效的gcd来解吧，代码很简单，如下：<br>typedef long long ll;<br>ll gcd(ll a,ll b)<br>{<br>    if(b == 0)<br>        return a;<br>    return gcd(b,a%b);<br>}</p>
+<p>这代码通俗易懂，很简短，却也很高能，把它牢记于心~</p>
+<h1 id="gcd-和-lcm-联合起来求-最小公倍数"><a href="#gcd-和-lcm-联合起来求-最小公倍数" class="headerlink" title="gcd 和 lcm 联合起来求 最小公倍数"></a>gcd 和 lcm 联合起来求 最小公倍数</h1><p>其实这个就是用a乘b的值在除以gcd就行了，代码：</p>
+<p>typedef long long ll;<br>ll gcd(ll a,ll b)<br>{<br>    if(b == 0)<br>        return a;<br>    return gcd(b,a%b);<br>}<br>ll lcm(ll a,ll b)<br>{<br>return a*b/gcd(a,b);<br>}</p>
+<h1 id="题源"><a href="#题源" class="headerlink" title="题源"></a>题源</h1><p> CodeForces 483A</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/30/day/" itemprop="url">
                   when ten years goes.
                 </a>
@@ -552,7 +650,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
