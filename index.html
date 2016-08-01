@@ -566,82 +566,12 @@ while(Vw = Vn通过某规则能够到达的节点){
 
       
         
-          
-            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="规律"><a href="#规律" class="headerlink" title="规律"></a>规律</h1><p>1、任何一个数mod9都等于其各个位上的数之和再mod9<br>    例如：12345%9 = (1+2+3+4+5)%9<br>2、爬楼梯的爬法问题：利用斐波那契法，推出前面台阶的爬法，再依次累加。<br>    例如：有两种情况，每次上一阶和每次两阶。1阶是1办法，两阶是2种办法，则三阶是1+2 = 3 种办法。<br>3、一个圆，任意划N条线，最多能分成 （n*n+n)/2 + 1 个部分。</p>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><pre><code>1、  Goldbach&apos;s Conjecture
-
-In 1742, Christian Goldbach, a German amateur mathematician, sent a letter to Leonhard Euler in which he made the following conjecture: 
-Every even number greater than 4 can be 
-written as the sum of two odd prime numbers.
-
-For example: 
-8 = 3 + 5. Both 3 and 5 are odd prime numbers. 
-20 = 3 + 17 = 7 + 13. 
-42 = 5 + 37 = 11 + 31 = 13 + 29 = 19 + 23.
-
-Today it is still unproven whether the conjecture is right. (Oh wait, I have the proof of course, but it is too long to write it on the margin of this page.) 
-Anyway, your task is now to verify Goldbach&apos;s conjecture for all even numbers less than a million. 
-Input
-The input will contain one or more test cases. 
-Each test case consists of one even integer n with 6 &lt;= n &lt; 1000000. 
-Input will be terminated by a value of 0 for n.
-Output
-For each test case, print one line of the form n = a + b, where a and b are odd primes. Numbers and operators should be separated by exactly one blank like in the sample output below. If there is more than one pair of odd primes adding up to n, choose the pair where the difference b - a is maximized. If there is no such pair, print a line saying &quot;Goldbach&apos;s conjecture is wrong.&quot;
-Sample Input
-8
-20
-42
-0
-Sample Output
-8 = 3 + 5
-20 = 3 + 17
-42 = 5 + 37
-</code></pre><p>心得：筛素数时，一次就够，不要因为是多组数据而重复筛，不然会T。<br>    ll定义的数也要用相应的‘%I64d’输出。<br>    <em>*</em>之间的为高效率筛素数。</p>
-<p>代码：</p>
-<pre><code>//***
-ll prime[1000005];
-int visit[1000005];
-int nm;
-int init_prim(ll n)  {
-    memset(visit, 0, sizeof(visit));
-    nm = 0;
-   for (int i = 2; i &lt;= n; ++i)  {
-       if (visit[i] == 0)  {
-            nm++;
-            prime[nm] = i;
-        }
-       for (int j = 1; ((j &lt;= nm) &amp;&amp; (i * prime[j] &lt;= n));  ++j)  {
-            visit[i * prime[j]] = 1;
-           if (i % prime[j] == 0) break; //进一步提高效率
-      }
- }
- //***
-return nm;//返回质数个数
-}
-int main()
-{
-    ll num,maxx;
-    init_prim(1000000);//在输入之前就筛一个足够大的数据。
-  while(scanf(&quot;%I64d&quot;,&amp;num) &amp;&amp; num!= 0)
-    {
-        maxx = 0;
-        int p1 = 0,p2 = 0,j;
-        for(int i = 1; i &lt; nm; i++)
-        {
-            j = num-prime[i];
-            if(visit[j] == 0)
-            {
-                p1 = j;
-                p2 = i;
-                break;
-            }
-        }
-            printf(&quot;%I64d = %I64d + %d\n&quot;,num,prime[p2],p1);
-    }
-    return 0;
-}
-</code></pre>
-          
+          <h1 id="规律"><a href="#规律" class="headerlink" title="规律"></a>规律</h1>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/29/[数论]题解+规律总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
