@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ACM," />
 
 
 
@@ -80,15 +80,22 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Forward">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="题目Inversion
+（本题解默认你已经学过了树状数组）Descriptionbobo has a sequence a 1,a 2,…,a n. He is allowed to swap two adjacent numbers for no more than k times. 
+Find the minimum number of inversions after his swaps.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDU4911 树状数组求逆序数">
+<meta property="og:url" content="http://yoursite.com/2016/08/01/树状数组求逆序数/index.html">
 <meta property="og:site_name" content="Forward">
-<meta property="og:description">
+<meta property="og:description" content="题目Inversion
+（本题解默认你已经学过了树状数组）Descriptionbobo has a sequence a 1,a 2,…,a n. He is allowed to swap two adjacent numbers for no more than k times. 
+Find the minimum number of inversions after his swaps.">
+<meta property="og:updated_time" content="2016-08-01T02:32:01.019Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Forward">
-<meta name="twitter:description">
+<meta name="twitter:title" content="HDU4911 树状数组求逆序数">
+<meta name="twitter:description" content="题目Inversion
+（本题解默认你已经学过了树状数组）Descriptionbobo has a sequence a 1,a 2,…,a n. He is allowed to swap two adjacent numbers for no more than k times. 
+Find the minimum number of inversions after his swaps.">
 
 
 
@@ -106,7 +113,7 @@
   };
 </script>
 
-  <title> Forward </title>
+  <title> HDU4911 树状数组求逆序数 | Forward </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -127,9 +134,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -206,9 +211,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -228,107 +233,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/01/03/流年/" itemprop="url">
-                  致，一个来自天使国度的你。
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-03T18:53:00+08:00" content="2017-01-03">
-              2017-01-03
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>十二月的晴夜，闪了电。</p>
-<p>有生之年， 与你相逢。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/03/流年/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/01/树状数组求逆序数/" itemprop="url">
-                  HDU4911 树状数组求逆序数
-                </a>
+                HDU4911 树状数组求逆序数
               
             
           </h1>
@@ -368,9 +273,7 @@
       
 
       
-        
-          
-            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><pre><code>Inversion
+        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><pre><code>Inversion
 </code></pre><p>（本题解默认你已经学过了树状数组）<br>Description<br>bobo has a sequence a 1,a 2,…,a n. He is allowed to swap two adjacent numbers for no more than k times. </p>
 <p>Find the minimum number of inversions after his swaps. </p>
 <p>Note: The number of inversions is the number of pair (i,j) where 1≤i<j≤n and="" a="" i="">a j.<br>Input<br>The input consists of several tests. For each tests: </j≤n></p>
@@ -463,36 +366,57 @@ int main()
         return 0;
 }
 </code></pre>
-          
-        
       
     </div>
     
     <div>
       
+        
+      
     </div>
 
     <div>
+      
+        
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/ACM/" rel="tag">#ACM</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/03/流年/" rel="prev" title="致，一个来自天使国度的你。">
+                致，一个来自天使国度的你。 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -500,6 +424,10 @@ int main()
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -519,8 +447,17 @@ int main()
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://stay.wiki/images/xiaomo.jpg"
@@ -563,6 +500,17 @@ int main()
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">2.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.2.</span> <span class="nav-text">思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对以上三个步骤进行详解"><span class="nav-number">2.2.1.</span> <span class="nav-text">对以上三个步骤进行详解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -666,6 +614,10 @@ int main()
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
